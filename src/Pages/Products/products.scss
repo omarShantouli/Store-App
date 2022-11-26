@@ -1,0 +1,51 @@
+@import '../../styles/mixins.scss';
+$border-color: lightGray;
+.product-card{
+    border: 1px solid $border-color;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.product-img-wrapper{
+    height: 250px;
+    margin: 5px;
+    padding: 16px;
+    border: solid 1px $border-color;
+    border-radius: 5px;
+    .product-img{
+        height: 100%; // 100% of the hight of the parent (250px) ==> parent: product-img-wrapper
+        width: 100%; // 100% of the width of the parent (0.25 screen width) ==> parent: col-lg-3
+    }
+}
+
+.product-card-body{
+    height: 175px;
+    padding: 16px;
+    text-align: center;
+
+    .product-card-desc{
+        height: 85%;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5; // restricts the number of lines
+        @include box-orient(vertical);
+        text-overflow: ellipsis;
+    }
+
+    .product-card-title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.product-details-modal{
+    .product-img-wrapper{
+        height: 350px;
+    }
+    .details-img{
+        width: 100%;
+        height: 100%;
+    }
+}
